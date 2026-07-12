@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyprus Planning AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">CYPRUS PLANNING INTELLIGENCE</div>
+        <h1>Cyprus Planning AI</h1>
+      </div>
+      <div class="status-wrap">
+        <span id="statusDot" class="status-dot"></span>
+        <span id="statusText">Checking API…</span>
+      </div>
+    </header>
+
+    <main class="chat-layout">
+      <section id="messages" class="messages" aria-live="polite">
+        <div class="welcome-card">
+          <div class="welcome-icon">⌂</div>
+          <h2>Ask a planning question</h2>
+          <p>
+            Ask in English or Greek. Answers are grounded in the planning documents
+            currently loaded in the knowledge base.
+          </p>
+          <div class="example-grid">
+            <button class="example-btn">Does a basement count toward the building coefficient?</button>
+            <button class="example-btn">How many parking spaces are required for a house?</button>
+            <button class="example-btn">Πώς μετριέται το ύψος σε επικλινές έδαφος;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="composer-wrap">
+        <form id="chatForm" class="composer">
+          <textarea
+            id="questionInput"
+            rows="1"
+            placeholder="Ask about Cyprus planning regulations…"
+            autocomplete="off"
+          ></textarea>
+          <button id="sendButton" type="submit">Ask</button>
+        </form>
+        <p class="disclaimer">
+          Research assistant only. Verify critical decisions against the official applicable planning instruments.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <template id="userMessageTemplate">
+    <div class="message-row user-row">
+      <div class="message user-message"></div>
+    </div>
+  </template>
+
+  <template id="assistantMessageTemplate">
+    <div class="message-row assistant-row">
+      <div class="assistant-card">
+        <div class="assistant-label">PLANNING AI</div>
+        <div class="answer"></div>
+        <details class="sources-panel">
+          <summary>Sources used</summary>
+          <div class="sources-list"></div>
+        </details>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
