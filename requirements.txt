@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+openai
+supabase
+python-dotenv
+httpx
+pandas
+openpyxl
+shapely
+pyproj
+beautifulsoup4
+xlrd
+pypdf
+pydantic
